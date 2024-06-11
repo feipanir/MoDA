@@ -1,0 +1,27 @@
+#!/bin/bash
+python train.py \
+--gpus_to_use 3 \
+--data_path /seokju4/Dataset/fei-Dataset/generated_data/ \
+--png \
+--weighted_ssim \
+--boxify \
+--model_name ./debug/ \
+--seg_mask none \
+--log_frequency 500 \
+--save_frequency 2 \
+--batch_size 12 \
+--log_depth \
+--log_lr \
+--log_multiframe \
+--log_trans whole \
+--reconstr_loss_weight 0.85 \
+--ssim_loss_weight 1.5 \
+--smooth_loss_weight 1e-3 \
+--motion_smooth_loss_weight 1e-3 \
+--motion_sparsity_loss_weight 1e-3 \
+--depth_consistency_loss_weight 1e-2 \
+--rot_loss_weight 1e-3 \
+--trans_loss_weight 1e-2 \
+--use_norm_in_downsample \
+--load_weights_folder models/checkpoints3/models/weights_3 \
+--models_to_load encoder depth pose motion scaler

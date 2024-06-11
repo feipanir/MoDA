@@ -1,0 +1,25 @@
+#!/bin/bash
+python train.py \
+--gpus_to_use 2 \
+--data_path /seokju4/Dataset/fei-Dataset/cityscapes-Wild-256/train/ \
+--png \
+--weighted_ssim \
+--boxify \
+--model_name ./debug_city256_0514/ \
+--seg_mask none \
+--log_frequency 500 \
+--save_frequency 2 \
+--batch_size 12 \
+--log_depth \
+--log_lr \
+--log_multiframe \
+--log_trans whole \
+--num_epochs 40 \
+--reconstr_loss_weight 0.85 \
+--ssim_loss_weight 1.5 \
+--smooth_loss_weight 1e-3 \
+--motion_smooth_loss_weight 1e-3 \
+--depth_consistency_loss_weight 1e-2 \
+--rot_loss_weight 1e-3 \
+--trans_loss_weight 1e-2 \
+--use_norm_in_downsample
